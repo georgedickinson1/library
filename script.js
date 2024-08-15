@@ -16,11 +16,6 @@ function setEventListener(id, bookTitle, bookRead) {
     button.addEventListener("click", function() {
         removeBook(id, bookTitle);
     })
-    // Read status event listener
-    // let read = document.querySelector("#icon" + id);
-    // read.addEventListener("click", function() {
-    //     // updateReadStatus(id, bookRead);
-    // })
 }
 
 // Display Books
