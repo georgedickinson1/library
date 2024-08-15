@@ -21,6 +21,7 @@ function setEventListener(id, bookTitle, bookRead) {
     read.addEventListener("click", function() {
         updateReadStatus(id, bookTitle);
     })
+
 }
 
 // Display Books
