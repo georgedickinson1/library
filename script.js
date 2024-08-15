@@ -17,14 +17,16 @@ function setEventListener(id, bookTitle, bookRead) {
         removeBook(id, bookTitle);
     })
     // Read status event listener
-    // let read = document.querySelector("#icon" + id);
-    // read.addEventListener("click", function() {
-    //     // updateReadStatus(id, bookRead);
-    // })
+    let read = document.querySelector("#icon" + id);
+    read.addEventListener("click", function() {
+        updateReadStatus(id, bookTitle);
+    })
 }
 
 // Display Books
 let count = 0;
+
+{/* <span onclick="updateReadStatus('${count}', ${book.title})""> */}
 
 function displayBook(book) {
     let div = document.createElement("div");
@@ -37,7 +39,7 @@ function displayBook(book) {
             <p>${book.author}</p>
             <p>${book.pages} pages</p>
             <p>Read: 
-                <span onclick="updateReadStatus('${count}', ${book.title})"">
+                <span>
                     <i class="fa-regular fa-circle-check" id="icon${count}"></i>
                 </span>   
             <p>`;    
@@ -48,13 +50,13 @@ function displayBook(book) {
         <p>${book.author}</p>
         <p>${book.pages} pages</p>
         <p>Read: 
-            <span onclick="updateReadStatus('${count}', ${book.title})"">
+            <span>
                 <i class="fa-regular fa-circle-xmark" id="icon${count}"></i>
             </span>    
         </p>`;   
     } 
-    let bookTitle = book.title
-    let bookRead = book.read
+    let bookTitle = book.title;
+    let bookRead = book.read;
     document.getElementsByClassName("books")[0].appendChild(div);
     let description = document.getElementsByClassName("description")[0];
     if (description) {
@@ -119,7 +121,8 @@ function updateReadStatus(id, bookTitle) {
             read.className = "fa-regular fa-circle-xmark";
         };
     };
-    const book = myLibrary.find((book) => book.title === bookTitle.toString());
+    bookTitle = bookTitle.toString().trim();
+    const book = myLibrary.find((book) => book.title === bookTitle);
     if (book.read === false) {
         book.read = true;
     } else {
