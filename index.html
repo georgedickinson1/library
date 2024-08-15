@@ -5,12 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/bd95889006.js" crossorigin="anonymous"></script>
     <title>Library</title>
 </head>
 <body>
-    <button class="add-book" onclick="addBookToLibrary()">Add Book</button>
+    <h1>Library</h1>
+    <button class="add-book">Add Book</button>
+
+    <!-- onclick="addBookToLibrary()" -- goes into button tag above -->
+
+    <hr>
     <div class="books">
 
     </div>
+    <hr class="last-line">
+    <p class="description">Efficiently manage your book collection by adding titles, authors, and page counts. Keep your library neatly organized in one place.</p>
+    <p class="instruction">Press <i class="fa-regular fa-circle-check"></i> or <i class="fa-regular fa-circle-xmark"></i> to update the status of read.</p>
+    <section class="modal">
+        <div class="modal-header">
+            <h3>Add a book...</h3>
+            <button class="modal-button-close">&times;</button>
+        </div>
+        <form action="javascript:void(0);" id="form">
+            <input type="text" placeholder="Title" id="title" required>
+            <input type="text" placeholder="Author" id="author" required>
+            <input type="number" placeholder="Pages" id="pages" required>
+            <div class="read">
+                <label for="read">Have you read it?</label>
+                <input type="checkbox" name="read" id="read">
+            </div>
+            <input type="submit" class="submit-button">
+        </form>
+    </section>
+    <div class="overlay"></div>
+    <footer>
+        <p>Copyright © 2024 georgedickinson1</p>
+        <a href="https://github.com/georgedickinson1" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </footer>
 </body>
 </html>
