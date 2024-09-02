@@ -1,12 +1,14 @@
 // Create Book object
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-};
 
-// const myLibrary = [defaultBook, defaultBook2];
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+}
+
 const myLibrary = [];
 
 // Add event listener for remove button on newly created cards
@@ -25,8 +27,6 @@ function setEventListener(id, bookTitle, bookRead) {
 
 // Display Books
 let count = 0;
-
-{/* <span onclick="updateReadStatus('${count}', ${book.title})""> */}
 
 function displayBook(book) {
     let div = document.createElement("div");
